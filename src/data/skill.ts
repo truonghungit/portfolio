@@ -1,0 +1,18 @@
+export const skills = [
+  'JavaScript (ES6+)',
+  'TypeScript',
+  'HTML5',
+  'CSS3',
+  'SCSS',
+  'Angular',
+  'NgRx',
+  'Rxjs',
+  'React',
+  'Redux',
+  'Zustand',
+  'React Query',
+  'Tailwind CSS',
+  'Jest',
+  'Vite',
+  'Webpack',
+];

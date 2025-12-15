@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { ThemeProvider } from './components/theme/theme-provider';
+import { ActiveSectionProvider } from './components/active-section';
+import { Header } from './components/section/header';
+import { Hero } from './components/section/hero';
+import { About } from './components/section/about';
+import { Skill } from './components/section/skill';
+import { WorkExperience } from './components/section/work-experience';
+import { Education } from './components/section/education';
+import { Contact } from './components/section/contact';
+import { Footer } from './components/section/footer';
+import { SectionDivider } from './components/section/section-divider';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <ThemeProvider>
+        <ActiveSectionProvider>
+          <div className='container px-4 mx-auto flex flex-col items-center'>
+            <Header />
+            <Hero />
+            <SectionDivider />
+            <About />
+            <Skill />
+            <WorkExperience />
+            {/* <Projects /> */}
+            <Education />
+            <Contact />
+            <Footer />
+          </div>
+        </ActiveSectionProvider>
+      </ThemeProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
