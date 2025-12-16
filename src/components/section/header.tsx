@@ -1,12 +1,15 @@
 import { motion } from 'framer-motion';
 
-import { useActiveSection } from '../active-section/use-active-section';
+import { cn } from '@/lib/utils';
 import { navigation } from '@/data/navigation';
+import { useActiveSection } from '../active-section/use-active-section';
 import { ThemeToggle } from '../theme/theme-toggle';
 
 export const Header = () => {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSection();
+
+  console.log('Active Section:', activeSection);
 
   return (
     <motion.header
@@ -28,9 +31,21 @@ export const Header = () => {
                     setTimeOfLastClick(Date.now());
                   }}
                 >
-                  <span className='hidden sm:inline-block'>{name}</span>
+                  <span
+                    className={cn(
+                      'hidden sm:inline-block',
+                      name === activeSection && 'text-emerald-700'
+                    )}
+                  >
+                    {name}
+                  </span>
                   <span className='inline-block sm:hidden'>
-                    <Icon className='w-5 h-5' />
+                    <Icon
+                      className={cn(
+                        'w-5 h-5',
+                        name === activeSection && 'text-emerald-700'
+                      )}
+                    />
                   </span>
                   {name === activeSection && (
                     <motion.span

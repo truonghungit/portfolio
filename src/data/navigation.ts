@@ -1,4 +1,4 @@
-import { Briefcase, FolderOpen, Home, MessageCircle, User } from 'lucide-react';
+import { Briefcase, Home, MessageCircle, User } from 'lucide-react';
 
 export const navigation = [
   {
@@ -15,11 +15,6 @@ export const navigation = [
     name: 'Experience',
     hash: '#experience',
     icon: Briefcase,
-  },
-  {
-    name: 'Projects',
-    hash: '#projects',
-    icon: FolderOpen,
   },
   {
     name: 'Contact',

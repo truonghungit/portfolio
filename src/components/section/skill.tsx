@@ -1,8 +1,14 @@
 import { skills } from '@/data/skill';
+import { useSectionInView } from '../active-section/use-section-in-view';
 
 export const Skill = () => {
+  const { ref: sectionRef } = useSectionInView('About');
   return (
-    <section className='py-20 px-6'>
+    <section
+      ref={sectionRef}
+      id='skills'
+      className='py-20 px-6'
+    >
       <div className=' max-w-screen-md mx-auto'>
         <div className='mb-10 text-center'>
           <h2 className='font-heading text-3xl font-semibold'>
