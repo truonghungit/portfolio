@@ -25,9 +25,9 @@ export const Hero = () => {
           href='#contact'
           className='flex items-center gap-3 rounded border px-3 py-1'
         >
-          <span className='relative flex size-2'>
-            <span className='absolute flex size-full animate-ping rounded-full bg-green-400 opacity-75'></span>
-            <span className='relative flex size-2 rounded-full bg-green-400'></span>
+          <span className='relative flex w-[10px] h-[10px]'>
+            <span className='absolute flex size-full animate-ping rounded-full bg-emerald-500 opacity-75'></span>
+            <span className='relative flex w-[10px] h-[10px] rounded-full bg-emerald-500'></span>
           </span>
           <span className='font-mono text-sm'>Available for work!</span>
         </a>
@@ -49,7 +49,7 @@ export const Hero = () => {
         transition={{
           delay: 0.1,
         }}
-        className='text-muted-foreground max-w-xl'
+        className='max-w-xl my-6'
       >
         A Senior frontend developer based in Ho Chi Minh City, Vietnam. <br />
         I'm passionate about building modern web applications using Angular,
