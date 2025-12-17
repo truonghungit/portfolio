@@ -1,8 +1,11 @@
-import { skills } from '@/data/skill';
+import { skillGroups } from '@/data/skill';
 import { useSectionInView } from '../active-section/use-section-in-view';
+
+// Data structure for skill groups
 
 export const Skill = () => {
   const { ref: sectionRef } = useSectionInView('About');
+
   return (
     <section
       ref={sectionRef}
@@ -15,14 +18,21 @@ export const Skill = () => {
             Technical Skills
           </h2>
         </div>
-        <div className='flex flex-wrap gap-3'>
-          {skills.map((skill, index) => (
-            <span
-              key={index}
-              className='px-4 py-2 bg-secondary rounded-lg text-sm font-medium transition-colors hover:bg-secondary/80'
-            >
-              {skill}
-            </span>
+        <div className='text-center flex flex-col gap-4'>
+          {skillGroups.map(({ skills, title }, index) => (
+            <div key={index}>
+              <div>{title}</div>
+              <div className='flex flex-wrap gap-3 justify-center my-3'>
+                {skills.map((skill, skillIndex) => (
+                  <span
+                    key={skillIndex}
+                    className='px-4 py-2 bg-secondary rounded-lg text-sm transition-colors hover:bg-secondary/80'
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>
