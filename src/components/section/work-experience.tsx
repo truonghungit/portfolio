@@ -5,19 +5,7 @@ import {
   type Experience,
   type ExperienceProject,
 } from '@/data/work-experience';
-
-// Badge for seniority
-function SeniorityBadge({ level }: { level: string }) {
-  const color =
-    level === 'senior'
-      ? 'bg-blue-100 text-blue-800'
-      : 'bg-gray-100 text-gray-800';
-  return (
-    <span className={`ml-2 px-2 py-0.5 rounded text-xs font-semibold ${color}`}>
-      {level}
-    </span>
-  );
-}
+import { Button } from '../ui/button';
 
 // Impact metric badge
 function ImpactBadge({ children }: { children: React.ReactNode }) {
@@ -36,31 +24,33 @@ const TechTag = ({ tech }: { tech: string }) => {
   );
 };
 
-// Project Card
 const ProjectCard = ({ project }: { project: ExperienceProject }) => {
   return (
-    <div className='relative my-4'>
+    <div className='relative'>
       <div className='border-primary bg-background absolute left-[-59px] top-1 size-2 rounded-full border' />
 
-      <div className='mb-1 font-semibold text-sm'>{project.name}</div>
-      <div className='mb-1 text-xs text-gray-600'>{project.problem}</div>
-      <ul className='list-disc list-inside text-xs mb-1'>
-        {project.actions.map((action: string, idx: number) => (
-          <li key={idx}>{action}</li>
-        ))}
-      </ul>
-      <div className='mb-1'>
-        {project.impact.map((metric: string, idx: number) => (
-          <ImpactBadge key={idx}>{metric}</ImpactBadge>
-        ))}
-      </div>
-      <div className='flex flex-wrap mt-1'>
-        {project.techStack.map((tech: string, idx: number) => (
-          <TechTag
-            key={idx}
-            tech={tech}
-          />
-        ))}
+      <div className='space-y-2'>
+        <div className='font-semibold'>{project.name}</div>
+        <div className='text-gray-600'>{project.description}</div>
+        <div className='flex flex-wrap'>
+          {project.techStack.map((tech: string, idx: number) => (
+            <TechTag
+              key={idx}
+              tech={tech}
+            />
+          ))}
+        </div>
+        <div className='text-gray-600'>{project.problem}</div>
+        <ul className='list-disc list-inside'>
+          {project.actions.map((action: string, idx: number) => (
+            <li key={idx}>{action}</li>
+          ))}
+        </ul>
+        <div>
+          {project.impact.map((metric: string, idx: number) => (
+            <ImpactBadge key={idx}>{metric}</ImpactBadge>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -74,28 +64,25 @@ const ExperienceCard = ({ experience }: { experience: Experience }) => {
 
   return (
     <div className='relative pl-8'>
-      <div className='border-primary bg-background absolute left-[-5px] top-5 size-3 rounded-full border-2' />
+      <div className='border-primary bg-background absolute left-[-5px] top-2 size-3 rounded-full border-2' />
 
-      <div className='rounded p-4 shadow-none'>
+      <div>
         <div className='flex flex-wrap items-center justify-between mb-1'>
-          <div className='font-medium text-base'>
-            {experience.title}
-            <SeniorityBadge level={experience.level} />
-          </div>
+          <div className='font-medium text-base'>{experience.title}</div>
           <div className='text-xs text-gray-500'>
-            {experience.startDate} – {experience.endDate}
+            {experience.startDate} - {experience.endDate}
           </div>
         </div>
-        <div className='text-xs text-gray-700 mb-1'>{experience.scope}</div>
-        <ul className='list-disc list-inside text-xs mb-2'>
+        <div className='text-gray-700 mb-1'>{experience.scope}</div>
+        <ul className='list-disc list-inside mb-2'>
           {experience.responsibilities
             .slice(0, 4)
             .map((item: string, idx: number) => (
               <li key={idx}>{item}</li>
             ))}
         </ul>
-        {/* Projects timeline */}
-        <div className='pl-2'>
+
+        <div className='pl-6 pt-4'>
           {highlighted.map((project) => (
             <ProjectCard
               key={project.id}
@@ -111,25 +98,26 @@ const ExperienceCard = ({ experience }: { experience: Experience }) => {
                   project={project}
                 />
               ))}
-              <button
-                className='mt-2 text-xs text-blue-700 underline hover:text-blue-900'
+              <Button
+                variant='outline'
+                size='sm'
                 onClick={() => setShowAll(false)}
-                type='button'
               >
                 Show less
-              </button>
+              </Button>
             </>
           )}
+
+          {showMore && (
+            <Button
+              variant='outline'
+              size='sm'
+              onClick={() => setShowAll(true)}
+            >
+              View more projects
+            </Button>
+          )}
         </div>
-        {showMore && (
-          <button
-            className='mt-2 text-xs text-blue-700 underline hover:text-blue-900'
-            onClick={() => setShowAll(true)}
-            type='button'
-          >
-            View more projects
-          </button>
-        )}
       </div>
     </div>
   );
@@ -149,10 +137,7 @@ function groupByCompany(experiences: Experience[]) {
   return Array.from(map.entries()).map(([company, experiences]) => {
     return {
       company,
-      domain: experiences[0].domain,
-      experiences: experiences.sort((a, b) =>
-        b.endDate.localeCompare(a.endDate)
-      ),
+      experiences,
     };
   });
 }
@@ -160,11 +145,9 @@ function groupByCompany(experiences: Experience[]) {
 const CompanySection = ({
   company,
   experiences,
-  domain,
 }: {
   company: string;
   experiences: Experience[];
-  domain?: string;
 }) => {
   const dates = experiences.reduce<[string, string]>(
     (acc, pos) => [
@@ -179,16 +162,15 @@ const CompanySection = ({
       <div className='bg-muted absolute left-0 top-2 h-full w-[2px] group-first:top-6 group-first:h-[calc(100%-24px)]'>
         <div className='border-primary bg-background absolute left-[-7px] top-0 size-4 rounded-full border-2' />
       </div>
-      <div className='flex flex-wrap items-center justify-between mb-2 ml-8'>
+      <div className='flex flex-wrap items-center justify-between mb-3 ml-8'>
         <div>
           <h3 className='text-xl font-medium'>{company}</h3>
-          {domain && <div className='text-xs text-gray-400'>{domain}</div>}
         </div>
         <span className='text-xs text-gray-500'>
           {dates[0]} - {dates[1]}
         </span>
       </div>
-      <div>
+      <div className='space-y-10'>
         {experiences.map((experience) => (
           <ExperienceCard
             key={experience.id + experience.startDate}
@@ -203,11 +185,7 @@ const CompanySection = ({
 export const WorkExperience = () => {
   const { ref: sectionRef } = useSectionInView('Experience');
 
-  const experiencesByCompany = groupByCompany(experiences).sort((a, b) => {
-    const aEnd = a.experiences[0]?.endDate || '';
-    const bEnd = b.experiences[0]?.endDate || '';
-    return bEnd.localeCompare(aEnd);
-  });
+  const experiencesByCompany = groupByCompany(experiences);
 
   return (
     <section
@@ -222,12 +200,11 @@ export const WorkExperience = () => {
         </p>
       </div>
       <div className='relative max-w-screen-md mx-auto'>
-        <div className='relative z-10'>
+        <div className='relative z-10 space-y-10'>
           {experiencesByCompany.map((group) => (
             <CompanySection
               key={group.company}
               company={group.company}
-              domain={group.domain}
               experiences={group.experiences}
             />
           ))}

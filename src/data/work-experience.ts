@@ -1,6 +1,7 @@
 export type ExperienceProject = {
   id: string;
   name: string;
+  description: string;
   problem: string;
   actions: string[];
   impact: string[];
@@ -11,7 +12,6 @@ export type ExperienceProject = {
 export type Experience = {
   id: string;
   title: string;
-  level: 'senior' | 'mid' | string;
   company: string;
   domain?: string;
   startDate: string;
@@ -25,11 +25,10 @@ export const experiences: Experience[] = [
   {
     id: 'senior-fe',
     title: 'Senior Frontend Engineer',
-    level: 'senior',
     company: 'Athena Pros',
     domain: 'Fintech SaaS',
-    startDate: '2022-01',
-    endDate: '2023-06',
+    startDate: 'Jun 2023',
+    endDate: 'Oct 2025',
     scope: 'Owned frontend architecture and delivery for core product',
     responsibilities: [
       'Owned frontend architecture across core modules',
@@ -41,6 +40,8 @@ export const experiences: Experience[] = [
       {
         id: 'admin-dashboard',
         name: 'Admin Dashboard Revamp',
+        description:
+          'Rebuilt the admin dashboard to improve performance and scalability',
         problem:
           'Legacy dashboard was slow, tightly coupled, and hard to scale across teams',
         actions: [
@@ -59,6 +60,8 @@ export const experiences: Experience[] = [
       {
         id: 'design-system',
         name: 'Internal Design System',
+        description:
+          'Created a design system to standardize UI components across products',
         problem:
           'Inconsistent UI patterns across products slowed development and QA',
         actions: [
@@ -76,9 +79,8 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    id: 'senior-fe',
+    id: 'senior-frontend-engineer-at-eztek',
     title: 'Senior Frontend Engineer',
-    level: 'senior',
     company: 'EZtek Software',
     startDate: '2022-01',
     endDate: '2023-05',
@@ -93,6 +95,8 @@ export const experiences: Experience[] = [
       {
         id: 'admin-dashboard',
         name: 'Admin Dashboard Revamp',
+        description:
+          'Rebuilt the admin dashboard to improve performance and scalability',
         problem:
           'Legacy dashboard was slow, tightly coupled, and hard to scale across teams',
         actions: [
@@ -111,6 +115,8 @@ export const experiences: Experience[] = [
       {
         id: 'design-system',
         name: 'Internal Design System',
+        description:
+          'Rebuilt the admin dashboard to improve performance and scalability',
         problem:
           'Inconsistent UI patterns across products slowed development and QA',
         actions: [
@@ -128,6 +134,8 @@ export const experiences: Experience[] = [
       {
         id: 'design-system',
         name: 'Internal Design System',
+        description:
+          'Rebuilt the admin dashboard to improve performance and scalability',
         problem:
           'Inconsistent UI patterns across products slowed development and QA',
         actions: [
@@ -145,6 +153,8 @@ export const experiences: Experience[] = [
       {
         id: 'design-system',
         name: 'Internal Design System',
+        description:
+          'Rebuilt the admin dashboard to improve performance and scalability',
         problem:
           'Inconsistent UI patterns across products slowed development and QA',
         actions: [
@@ -162,12 +172,11 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    id: 'fe',
+    id: 'frontend-engineer-at-eztek',
     title: 'Frontend Engineer',
-    level: 'mid',
     company: 'EZtek Software',
-    startDate: '2020-01',
-    endDate: '2021-12',
+    startDate: 'Aug 2015',
+    endDate: 'Dec 2019',
     scope: 'Built and maintained user-facing features for core product',
     responsibilities: [
       'Implemented product features from design to production',
@@ -178,6 +187,8 @@ export const experiences: Experience[] = [
       {
         id: 'billing-flow',
         name: 'Billing Flow Redesign',
+        description:
+          'Rebuilt the admin dashboard to improve performance and scalability',
         problem:
           'Complex billing flow caused high user drop-off during checkout',
         actions: [
@@ -189,6 +200,34 @@ export const experiences: Experience[] = [
           'Reduced checkout drop-off rate by 18%',
           'Increased successful payments',
         ],
+        techStack: ['React', 'Formik'],
+        highlights: true,
+      },
+    ],
+  },
+  {
+    id: 'intern-at-eztek',
+    title: 'Intern / On Job Training',
+    company: 'EZtek Software',
+    startDate: 'May 2015',
+    endDate: 'Jul 2015',
+    scope:
+      'Intensive training in Full-stack development and Scrum methodologies.',
+    responsibilities: [],
+    projects: [
+      {
+        id: 'billing-flow',
+        name: 'Billing Flow Redesign',
+        description:
+          'Rebuilt the admin dashboard to improve performance and scalability',
+        problem:
+          'Complex billing flow caused high user drop-off during checkout',
+        actions: [
+          'Reworked user flow based on analytics and user feedback',
+          'Implemented step-based checkout UI',
+          'Optimized form validation and error handling',
+        ],
+        impact: [],
         techStack: ['React', 'Formik'],
         highlights: true,
       },
