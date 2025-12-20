@@ -26,7 +26,7 @@ export const Skill = () => {
                 {skills.map((skill, skillIndex) => (
                   <span
                     key={skillIndex}
-                    className='px-4 py-2 bg-secondary rounded-lg text-sm transition-colors hover:bg-secondary/80'
+                    className='px-4 py-1.5 bg-secondary rounded-full text-sm transition-colors hover:bg-secondary/80'
                   >
                     {skill}
                   </span>
