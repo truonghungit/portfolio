@@ -17,18 +17,32 @@ export const skillGroups = [
   },
   {
     title: 'UI & Styling',
-    skills: ['Angular Material', 'PrimeNG', 'Bootstrap', 'Tailwind CSS'],
+    skills: [
+      'Angular Material',
+      'PrimeNG',
+      'Tailwind CSS',
+      'Bootstrap',
+      'Tailwind CSS',
+      'Shadcn UI',
+    ],
   },
   {
     title: 'Testing',
-    skills: ['Jest', 'Cypress', 'Jasmine'],
+    skills: ['Jasmine', 'Jest', 'Cypress', 'Testing Library'],
   },
   {
     title: 'Deployment & CI/CD',
-    skills: ['Firebase', 'Netlify', 'Vercel', 'GitHub Actions'],
+    skills: [
+      'Firebase',
+      'Netlify',
+      'Vercel',
+      'GitHub Actions',
+      'Docker',
+      'Azure DevOps',
+    ],
   },
   {
     title: 'Other',
-    skills: ['Git', 'Docker', 'VS Code', 'Figma'],
+    skills: ['Git', 'VS Code', 'Figma'],
   },
 ];

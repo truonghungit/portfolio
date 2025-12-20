@@ -32,7 +32,7 @@ export const useTheme = () => {
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({
   children,
-  defaultTheme = 'light',
+  defaultTheme = 'dark',
   storageKey = 'vite-ui-theme',
 }) => {
   const [theme, setTheme] = useState<Theme>(
