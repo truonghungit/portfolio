@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Download, Github, Linkedin } from 'lucide-react';
+import { ArrowRight, Download, Linkedin } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { useSectionInView } from '../active-section/use-section-in-view';
@@ -21,16 +21,18 @@ export const Hero = () => {
           duration: 0.2,
         }}
       >
-        <a
-          href='#contact'
-          className='flex items-center gap-3 rounded border px-3 py-1'
-        >
-          <span className='relative flex w-[10px] h-[10px]'>
-            <span className='absolute flex size-full animate-ping rounded-full bg-emerald-500 opacity-75'></span>
-            <span className='relative flex w-[10px] h-[10px] rounded-full bg-emerald-500'></span>
-          </span>
-          <span className='font-mono text-sm'>Available for work!</span>
-        </a>
+        <span className='relative inline-flex rounded-full p-[2px] bg-gradient-to-tr from-emerald-500 via-indigo-500 to-emerald-500 bg-[length:200%_200%] animate-gradient-spin'>
+          <a
+            href='#contact'
+            className='flex items-center gap-3 rounded-full bg-white dark:bg-zinc-950 px-3 py-1'
+          >
+            <span className='relative flex w-[10px] h-[10px]'>
+              <span className='absolute flex size-full animate-ping rounded-full bg-emerald-500 opacity-75'></span>
+              <span className='relative flex w-[10px] h-[10px] rounded-full bg-emerald-500'></span>
+            </span>
+            <span className='font-mono text-sm'>Available for work!</span>
+          </a>
+        </span>
       </motion.div>
       <motion.h1
         initial={{ opacity: 0, y: 100 }}
@@ -66,6 +68,7 @@ export const Hero = () => {
         <Button
           asChild
           size='lg'
+          className='rounded-full hidden sm:flex'
         >
           <a href='#contact'>
             Get in touch <ArrowRight className='ml-2 size-4' />
@@ -74,7 +77,7 @@ export const Hero = () => {
         <Button
           variant='outline'
           size='lg'
-          className='hidden sm:flex'
+          className='rounded-full'
           asChild
         >
           <a
@@ -86,6 +89,7 @@ export const Hero = () => {
         </Button>
         <Button
           variant='outline'
+          className='rounded-full'
           size='lg'
           asChild
         >
@@ -95,19 +99,6 @@ export const Hero = () => {
             target='_blank'
           >
             <Linkedin className='size-5' />
-          </a>
-        </Button>
-        <Button
-          variant='outline'
-          size='lg'
-          asChild
-        >
-          <a
-            href='https://github.com/truonghungit'
-            aria-label='Github'
-            target='_blank'
-          >
-            <Github className='size-5' />
           </a>
         </Button>
       </motion.div>
