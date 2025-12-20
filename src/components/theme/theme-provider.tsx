@@ -1,13 +1,6 @@
-import React, {
-  createContext,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
-// Define your theme types
-export type Theme = 'light' | 'dark';
+import { ThemeContext, type Theme } from './theme-context';
 
 type ThemeProviderProps = {
   children: React.ReactNode;
@@ -15,24 +8,9 @@ type ThemeProviderProps = {
   storageKey?: string;
 };
 
-interface ThemeContextProps {
-  theme: Theme;
-  toggleTheme: () => void;
-}
-
-const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
-
-export const useTheme = () => {
-  const context = useContext(ThemeContext);
-  if (!context) {
-    throw new Error('useTheme must be used within a ThemeProvider');
-  }
-  return context;
-};
-
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({
   children,
-  defaultTheme = 'dark',
+  defaultTheme = 'light',
   storageKey = 'vite-ui-theme',
 }) => {
   const [theme, setTheme] = useState<Theme>(
