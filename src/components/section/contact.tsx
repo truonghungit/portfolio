@@ -1,15 +1,11 @@
 import { Mail } from 'lucide-react';
-import { useTheme } from '../theme/theme-provider';
-export const Contact = () => {
-  const { theme } = useTheme();
-  const isDarkMode = theme === 'dark';
+import { Button } from '../ui/button';
 
+export const Contact = () => {
   return (
     <section
       id='contact'
-      className={`py-20 px-6 border-t ${
-        isDarkMode ? 'border-gray-800' : 'border-gray-200'
-      }`}
+      className='py-20 px-6 border-t border-gray-200 dark:border-gray-800'
     >
       <div className='max-w-5xl mx-auto text-center'>
         <div className='mb-10 text-center'>
@@ -19,27 +15,24 @@ export const Contact = () => {
           </p>
         </div>
         <div className='flex flex-col sm:flex-row gap-4 justify-center'>
-          <a
-            href={`mailto:truonghungit@gmail.com`}
-            className={`inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg transition-colors ${
-              isDarkMode
-                ? 'bg-white text-black hover:bg-gray-200'
-                : 'bg-black text-white hover:bg-gray-800'
-            }`}
+          <Button
+            asChild
+            size='lg'
+            className='rounded-full'
           >
-            <Mail className='w-5 h-5' />
-            truonghungit@gmail.com
-          </a>
-          <a
-            href='tel:+84915258989'
-            className={`inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg transition-colors border ${
-              isDarkMode
-                ? 'border-gray-700 hover:bg-gray-800'
-                : 'border-gray-300 hover:bg-gray-100'
-            }`}
+            <a href={`mailto:truonghungit@gmail.com`}>
+              <Mail className='w-5 h-5' />
+              truonghungit@gmail.com
+            </a>
+          </Button>
+          <Button
+            asChild
+            variant='outline'
+            className='rounded-full'
+            size='lg'
           >
-            (+84) 772 47 48 42
-          </a>
+            <a href='tel:+84915258989'>(+84) 772 47 48 42</a>
+          </Button>
         </div>
       </div>
     </section>
