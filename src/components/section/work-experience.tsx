@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useSectionInView } from '../active-section/use-section-in-view';
 import {
   experiences,
@@ -9,13 +9,14 @@ import { Button } from '../ui/button';
 import { Building2, Calendar, MapPin } from 'lucide-react';
 import { calculateExperienceDuration, cn } from '@/lib/utils';
 
-function ImpactBadge({ children }: { children: React.ReactNode }) {
-  return (
-    <span className='inline-block bg-emerald-100 text-green-800 font-bold px-2 py-1 rounded text-xs'>
-      {children}
-    </span>
-  );
-}
+// TODO: Hide for now
+// function ImpactBadge({ children }: { children: React.ReactNode }) {
+//   return (
+//     <span className='inline-block bg-emerald-100 text-green-800 font-bold px-2 py-1 rounded text-xs'>
+//       {children}
+//     </span>
+//   );
+// }
 
 const TechTag = ({ tech }: { tech: string }) => {
   return (
