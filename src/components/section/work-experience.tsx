@@ -19,7 +19,7 @@ function ImpactBadge({ children }: { children: React.ReactNode }) {
 
 const TechTag = ({ tech }: { tech: string }) => {
   return (
-    <span className='inline-block bg-secondary px-2 py-1 rounded text-xs'>
+    <span className='inline-block bg-secondary px-2 py-1 rounded-full text-sm'>
       {tech}
     </span>
   );
@@ -28,12 +28,12 @@ const TechTag = ({ tech }: { tech: string }) => {
 const ProjectCard = ({ project }: { project: ExperienceProject }) => {
   return (
     <div className='relative'>
-      <div className='border-primary bg-background absolute left-[-59px] top-2 size-2 rounded-full border' />
+      <div className='border-primary bg-background absolute left-[-50px] md:left-[-59px] top-2 size-2 rounded-full border' />
 
       <div className='space-y-3'>
         <div className='font-semibold'>{project.name}</div>
-        <div className='text-gray-600'>{project.description}</div>
-        <div className='text-gray-600'>{project.problem}</div>
+        <div className=''>{project.description}</div>
+        {/* TODO: Hide for now <div className=''>{project.problem}</div> */}
         <div className='flex flex-wrap gap-2'>
           {project.techStack.map((tech: string, idx: number) => (
             <TechTag
@@ -47,11 +47,13 @@ const ProjectCard = ({ project }: { project: ExperienceProject }) => {
             <li key={idx}>{action}</li>
           ))}
         </ul>
+        {/* 
+        TODO: Hide for now
         <div className='flex flex-wrap gap-2'>
           {project.impact.map((metric: string, idx: number) => (
             <ImpactBadge key={idx}>{metric}</ImpactBadge>
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );
@@ -113,15 +115,17 @@ const ExperienceCard = ({
       </div>
 
       <div>
+        {/* 
+        TODO: Hidden for now
         <ul className='list-disc list-inside mb-2'>
           {experience.responsibilities
             .slice(0, 4)
             .map((item: string, idx: number) => (
               <li key={idx}>{item}</li>
             ))}
-        </ul>
+        </ul> */}
 
-        <div className='pl-6 pt-4 space-y-6'>
+        <div className='pl-4 md:pl-6 pt-4 space-y-6'>
           {highlighted.map((project) => (
             <ProjectCard
               key={project.id}

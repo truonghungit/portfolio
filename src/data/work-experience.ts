@@ -87,80 +87,105 @@ export const experiences: Experience[] = [
     ],
     projects: [
       {
-        id: 'admin-dashboard',
-        name: 'Admin Dashboard Revamp',
+        id: 'career-pathway',
+        name: 'Career Pathway',
         description:
-          'Rebuilt the admin dashboard to improve performance and scalability',
+          'Career Pathway is a platform that makes career exploration simple, engaging, and effective. Whether it’s helping a high school student discover their dream job, a professional showcasing their expertise, or a business attracting top talent. ',
         problem:
           'Legacy dashboard was slow, tightly coupled, and hard to scale across teams',
         actions: [
-          'Designed new modular component architecture',
-          'Refactored state management to reduce unnecessary re-renders',
-          'Led frontend delivery from technical design to production release',
+          'Designed and set up the project architecture from scratch, ensuring scalability and maintainability',
+          'Delivered new features efficiently while maintaining existing systems through close collaboration with the team',
+          'Conducted technical reviews, mentored junior developers, and improved overall code quality',
+          'Defined the technical roadmap and drove adherence to best practices across the team ',
+          'Troubleshot and resolved complex technical challenges, reducing development bottlenecks',
         ],
         impact: [
           'Reduced bundle size by 40%',
           'Improved LCP by 35%',
           'Enabled 5 internal teams to ship features independently',
         ],
-        techStack: ['React', 'TypeScript', 'Vite', 'TanStack Query'],
+        techStack: [
+          'TypeScript',
+          'Angular',
+          'Angular Material',
+          'Angular CDK',
+          'NgRx',
+        ],
         highlights: true,
       },
       {
-        id: 'design-system',
-        name: 'Internal Design System',
+        id: 'accountia',
+        name: 'Accountia',
         description:
-          'Rebuilt the admin dashboard to improve performance and scalability',
+          'An Enterprise Resource Planning system to centralize data and streamline operations across departments such as warehousing, purchasing, sales, and accounting.',
         problem:
           'Inconsistent UI patterns across products slowed development and QA',
         actions: [
-          'Defined core UI principles and component API',
-          'Built reusable component library with documentation',
-          'Set up visual regression testing',
+          'Built and maintained the project architecture, ensuring scalability and consistency across modules',
+          'Implemented UI features and standardized the component library with Storybook, enabling alignment across multiple product teams',
+          'Conducted code reviews, provided technical feedback, and mentored junior engineers, improving code quality and team efficiency ',
+          'Verified and tracked tasks for team members to ensure timely and high-quality delivery',
+          'Performed unit and end-to-end testing using Jest and Cypress to maintain product reliability ',
         ],
         impact: [
           'Cut feature development time by ~25%',
           'Reduced UI-related bugs reported by QA',
         ],
-        techStack: ['React', 'Storybook', 'Chromatic'],
+        techStack: [
+          'TypeScript',
+          'Angular',
+          'Angular Material',
+          'Angular CDK',
+          'NgRx',
+          'RxJS',
+          'Storybook',
+          'Jest',
+          'Cypress',
+        ],
         highlights: true,
       },
       {
-        id: 'design-system',
-        name: 'Internal Design System',
+        id: 'ui-library-online-teaching-platform',
+        name: 'UI library for Online teaching platform',
         description:
-          'Rebuilt the admin dashboard to improve performance and scalability',
+          'The online teaching platform is a comprehensive digital teaching and learning toolkit that has become an integral part of the practice of thousands of teachers worldwide. It assists with differentiation, student engagement, feedback, and assessment. Its rich data insights are perfect for tracking student progress.',
         problem:
           'Inconsistent UI patterns across products slowed development and QA',
         actions: [
-          'Defined core UI principles and component API',
-          'Built reusable component library with documentation',
-          'Set up visual regression testing',
+          'Migrated existing components from Vue.js to React ',
+          'Developed new UI components to support product features and enhance user experience ',
         ],
         impact: [
           'Cut feature development time by ~25%',
           'Reduced UI-related bugs reported by QA',
         ],
-        techStack: ['React', 'Storybook', 'Chromatic'],
+        techStack: [
+          'React',
+          'Vue',
+          'Storybook',
+          'Tailwind CSS',
+          'Jest',
+          'Rollup',
+        ],
         highlights: false,
       },
       {
-        id: 'design-system',
-        name: 'Internal Design System',
+        id: 'rate-it',
+        name: 'RateIt',
         description:
-          'Rebuilt the admin dashboard to improve performance and scalability',
+          'A rating system, intelligent and dynamic micro surveys, available across all channels, ensures you are really listening to your customer at every meaningful moment, without ever delivering an annoying survey.',
         problem:
           'Inconsistent UI patterns across products slowed development and QA',
         actions: [
-          'Defined core UI principles and component API',
-          'Built reusable component library with documentation',
-          'Set up visual regression testing',
+          'Maintain existing systems and deliver new features by streamlining workflows and reducing deployment times',
+          'Develop and execute comprehensive unit tests to ensure code reliability and functionality.',
         ],
         impact: [
           'Cut feature development time by ~25%',
           'Reduced UI-related bugs reported by QA',
         ],
-        techStack: ['React', 'Storybook', 'Chromatic'],
+        techStack: ['TypeScript', 'Angular'],
         highlights: false,
       },
     ],
@@ -180,22 +205,38 @@ export const experiences: Experience[] = [
     ],
     projects: [
       {
-        id: 'billing-flow',
-        name: 'Billing Flow Redesign',
+        id: 'job-marketplace',
+        name: 'Job Marketplace',
         description:
-          'Rebuilt the admin dashboard to improve performance and scalability',
+          'An online job marketplace connecting people who have jobs that need to be done with those looking for work in the UK market.',
         problem:
           'Complex billing flow caused high user drop-off during checkout',
         actions: [
-          'Reworked user flow based on analytics and user feedback',
-          'Implemented step-based checkout UI',
-          'Optimized form validation and error handling',
+          'Implemented UI features efficiently',
+          'Performed debugging and optimized components for better performance',
         ],
         impact: [
           'Reduced checkout drop-off rate by 18%',
           'Increased successful payments',
         ],
-        techStack: ['React', 'Formik'],
+        techStack: ['React', 'React Router', 'Redux', 'Bootstrap'],
+        highlights: true,
+      },
+      {
+        id: 'hyre-car',
+        name: 'Hyre Car',
+        description: 'Rent your car out to others for extra income.',
+        problem:
+          'Complex billing flow caused high user drop-off during checkout',
+        actions: [
+          'Implemented UI features efficiently',
+          'Performed debugging and optimized components for better performance',
+        ],
+        impact: [
+          'Reduced checkout drop-off rate by 18%',
+          'Increased successful payments',
+        ],
+        techStack: ['PHP', 'JavaScript', 'jQuery', 'Bootstrap'],
         highlights: true,
       },
     ],
