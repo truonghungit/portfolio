@@ -13,9 +13,12 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
   defaultTheme = 'light',
   storageKey = 'vite-ui-theme',
 }) => {
-  const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
-  );
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window !== 'undefined') {
+      return (localStorage.getItem(storageKey) as Theme) || defaultTheme;
+    }
+    return defaultTheme;
+  });
 
   useEffect(() => {
     const root = window.document.documentElement;
