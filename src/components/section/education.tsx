@@ -56,11 +56,11 @@ export const Education = () => {
                 <span>Ho Chi Minh City, Vietnam</span>
               </div>
             </div>
-            <p className='text-muted-foreground'>
+            {/* <p className='text-muted-foreground'>
               Graduated with a GPA of 3.43, focusing on software development
               principles, algorithms, and system design. Engaged in various
               projects that enhanced my coding skills and teamwork abilities.
-            </p>
+            </p> */}
           </motion.div>
         </div>
       </div>
