@@ -31,7 +31,7 @@ export const Contact = () => {
             className='rounded-full'
             size='lg'
           >
-            <a href='tel:+84915258989'>(+84) 772 47 48 42</a>
+            <a href='tel:+84772474842'>(+84) 772 47 48 42</a>
           </Button>
         </div>
       </div>
