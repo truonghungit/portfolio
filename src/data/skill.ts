@@ -1,7 +1,7 @@
 export const skillGroups = [
   {
     title: 'Languages',
-    skills: ['JavaScript', 'TypeScript', 'HTML5', 'CSS3', 'SCSS'],
+    skills: ['JavaScript', 'TypeScript'],
   },
   {
     title: 'Frameworks & Libraries',
@@ -32,14 +32,7 @@ export const skillGroups = [
   },
   {
     title: 'Deployment & CI/CD',
-    skills: [
-      'Firebase',
-      'Netlify',
-      'Vercel',
-      'GitHub Actions',
-      'Docker',
-      'Azure DevOps',
-    ],
+    skills: ['Docker', 'GitHub Actions', 'Azure DevOps'],
   },
   {
     title: 'Other',
